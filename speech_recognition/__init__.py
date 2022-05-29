@@ -970,7 +970,9 @@ class Recognizer(AudioSource):
         config = {
             'encoding': speech.RecognitionConfig.AudioEncoding.FLAC,
             'sample_rate_hertz': audio_data.sample_rate,
-            'language_code': language
+            'language_code': language,
+            'use_enhanced': True,
+            'model': "phone_call"
         }
         if preferred_phrases is not None:
             config['speechContexts'] = [speech.SpeechContext(
